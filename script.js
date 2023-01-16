@@ -7,13 +7,30 @@ const sparisci= gridContainer.remove("cell")
 
 },3000);
 setTimeout(function(){
-    const uno=parseInt(prompt("seleziona il primo numero esatto"));
-    const due=parseInt(prompt("seleziona il secondo numero esatto"));
-    const tre=parseInt(prompt("seleziona il terzo numero esatto"));
-    const quattro=parseInt(prompt("seleziona il quarto numero esatto"));
-    const cinque=parseInt(prompt("seleziona il quinto numero esatto"));
+    // const uno=parseInt(prompt("seleziona il primo numero esatto"));
+    // const due=parseInt(prompt("seleziona il secondo numero esatto"));
+    // const tre=parseInt(prompt("seleziona il terzo numero esatto"));
+    // const quattro=parseInt(prompt("seleziona il quarto numero esatto"));
+    // const cinque=parseInt(prompt("seleziona il quinto numero esatto"));
+    const numbers=[];
+    numbersContainer=document.createElement("p")
+    for(let i =0;i<5;i++){
+        const input=parseInt(prompt("seleziona i numeri"));
+            if(input==numeriGenerati[i]){
+            numbers.push(numeriGenerati[i]);
+        }
+    }
     
+    numbersContainer.innerHTML="HAI INDOVINATO"+numbers.length;
+    numbersContainer.innerHTML+=numbers;
+   
 },4000)
+    // if(numeriGenerati==uno && due && tre && quattro ){
+    //     alert("hai vinto ")
+    // }
+    // else {
+    //     alert("hai perso")
+    // }
 
 playButton.addEventListener('click',
 
@@ -53,7 +70,7 @@ function createNewCell(num) {
     cell.classList.add('cell');
  
     
-        
+    
         cell.innerHTML = num;
 
         return cell;
